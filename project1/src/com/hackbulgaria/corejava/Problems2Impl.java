@@ -164,9 +164,8 @@ public class Problems2Impl implements Problems2 {
 		long sum = 0;
 		Arrays.sort(a);
 		Arrays.sort(b);
-		for (int i = a.length-1; i >= 0; i--)
-		{
-				sum += a[i]*b[i];
+		for (int i = a.length - 1; i >= 0; i--) {
+			sum += a[i] * b[i];
 		}
 		return sum;
 	}
@@ -186,14 +185,25 @@ public class Problems2Impl implements Problems2 {
 
 	@Override
 	public int[][] rescale(int[][] original, int newWidth, int newHeight) {
-		// TODO Auto-generated method stub
-		return null;
+		int[][] temp = new int[newWidth][newHeight];
+		int oldHeight = original.length;
+		int oldWidth = original[0].length;
+		double x_ratio = newWidth / (double) oldWidth;
+		double y_ratio = newHeight / (double) oldHeight;
+		double px, py;
+		for (int i=0;i<newHeight;i++) {
+	        for (int j=0;j<newWidth;j++) {
+	            px = Math.floor(j*x_ratio);
+	            py = Math.floor(i*y_ratio);
+	            temp[i][j] = original[(int)(px)][(int)(py)];
+	        }
+	    }
+	    return temp ;
 	}
 
 	@Override
 	public String reverseMe(String argument) {
-		// TODO Auto-generated method stub
-		return null;
+		return StringBuilder(argument).reverse();
 	}
 
 	@Override
