@@ -139,13 +139,30 @@ public class Problems2Impl implements Problems2 {
 
 	@Override
 	public int getOddOccurrence(int[] array) {
-		return 0;
+		Arrays.sort(array);
+		int init = array[0];
+		int i = 0;
+		while (true)
+		{
+		while (array[i] == init)
+		{
+			i++;
+		}
+		init = array[i];
+		if (i % 2 != 0)
+		{
+			return array[i-1];
+		}}
 	}
 
 	@Override
 	public long pow(int a, int b) {
-		// TODO Auto-generated method stub
-		return 0;
+		long result = 1;
+		for (int i = 0; i<b; i++)
+		{
+			result *= a;
+		}
+		return result;
 	}
 
 	@Override
