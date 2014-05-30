@@ -123,8 +123,7 @@ public class Problems2Tests {
     @Test
     public void testGetOddOccurrence() {
     	int[] numbers = new int[] { 1, 1, 3, 3, 6, 5, 4, 6, 5, 9, 1, 1, 3, 15, 4, 5, 9, 3, 15 };
-    	int[] numbers2 = new int[] {1,1,1};
-        assertEquals(5, problems2.getOddOccurrence(numbers));
+    	assertEquals(5, problems2.getOddOccurrence(numbers));
     }
 
     @Test

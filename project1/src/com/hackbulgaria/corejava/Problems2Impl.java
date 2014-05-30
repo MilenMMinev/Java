@@ -123,18 +123,15 @@ public class Problems2Impl implements Problems2 {
 	}
 
 	@Override
-	public long kthFac(int k, int n) 
-	{
+	public long kthFac(int k, int n) {
 		long result = 1;
-		for (int i = 1; i <= k; i++)
-		{
-			for (int j = 1; j <= n; j++)
-			{
-				result*= j;
+		for (int i = 1; i <= k; i++) {
+			for (int j = 1; j <= n; j++) {
+				result *= j;
 			}
 		}
 		return result;
-			
+
 	}
 
 	@Override
@@ -142,24 +139,21 @@ public class Problems2Impl implements Problems2 {
 		Arrays.sort(array);
 		int init = array[0];
 		int i = 0;
-		while (true)
-		{
-		while (array[i] == init)
-		{
-			i++;
+		while (true) {
+			while (array[i] == init) {
+				i++;
+			}
+			init = array[i];
+			if (i % 2 != 0) {
+				return array[i - 1];
+			}
 		}
-		init = array[i];
-		if (i % 2 != 0)
-		{
-			return array[i-1];
-		}}
 	}
 
 	@Override
 	public long pow(int a, int b) {
 		long result = 1;
-		for (int i = 0; i<b; i++)
-		{
+		for (int i = 0; i < b; i++) {
 			result *= a;
 		}
 		return result;
@@ -167,20 +161,27 @@ public class Problems2Impl implements Problems2 {
 
 	@Override
 	public long maximalScalarSum(int[] a, int[] b) {
-		// TODO Auto-generated method stub
-		return 0;
+		long sum = 0;
+		Arrays.sort(a);
+		Arrays.sort(b);
+		for (int i = a.length-1; i >= 0; i--)
+		{
+				sum += a[i]*b[i];
+		}
+		return sum;
 	}
 
 	@Override
 	public int maxSpan(int[] array) {
-		// TODO Auto-generated method stub
-		return 0;
+		return array.length - 1;
 	}
 
 	@Override
 	public boolean canBalance(int[] array) {
-		// TODO Auto-generated method stub
-		return false;
+		int sum = 0;
+		for (int elements : array)
+			sum += elements;
+		return sum % 2 == 0;
 	}
 
 	@Override
